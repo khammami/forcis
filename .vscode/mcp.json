@@ -1,0 +1,8 @@
+{
+  "servers": {
+    "forcis": {
+      "command": "Rscript",
+      "args": ["-e", "forcis::forcis_mcp_server()"]
+    }
+  }
+}
