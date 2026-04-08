@@ -72,6 +72,12 @@ reference:
     - plot_record_by_season
     - plot_record_by_depth
 
+- title: MCP server
+  desc: >
+    Model Context Protocol server for AI assistants
+  contents:
+    - forcis_mcp_server
+
 - title: Utilities
   desc: >
     Helper functions

@@ -19,3 +19,5 @@
 ^real-tests$
 ^cran-comments\.md$
 ^joss-paper$
+^\.agents$
+^skills-lock\.json$
