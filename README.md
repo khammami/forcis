@@ -16,6 +16,10 @@ Check](https://github.com/ropensci/forcis/actions/workflows/R-CMD-check.yaml/bad
 [![codecov](https://codecov.io/gh/ropensci/forcis/branch/main/graph/badge.svg)](https://app.codecov.io/gh/ropensci/forcis)
 [![JOSS](https://joss.theoj.org/papers/10.21105/joss.09217/status.svg)](https://doi.org/10.21105/joss.09217)
 [![DOI](https://zenodo.org/badge/428715013.svg)](https://doi.org/10.5281/zenodo.15470664)
+[![Total
+downloads](https://cranlogs.r-pkg.org/badges/grand-total/forcis?color=orange)](https://CRAN.R-project.org/package=forcis)
+[![Monthly
+downloads](https://cranlogs.r-pkg.org/badges/forcis)](https://CRAN.R-project.org/package=forcis)
 <!-- badges: end -->
 
 ## Table of contents
