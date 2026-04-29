@@ -21,3 +21,8 @@ README.html
 inst/doc
 .forcis
 forcis-db/
+
+# AI agent skills ----
+.agents/
+skills-lock.json
+
