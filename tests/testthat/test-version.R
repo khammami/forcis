@@ -216,3 +216,20 @@ test_that("Test set_version() defaults to latest when empty input", {
     }
   )
 })
+
+test_that("Test set_version() errors on invalid answer", {
+  create_tempdir()
+
+  local_mocked_bindings(readline = function(prompt) "maybe", .package = "base")
+
+  with_mocked_bindings(
+    get_metadata = get_metadata_mock,
+    {
+      expect_error(
+        set_version(version = "07", ask = TRUE),
+        "Please type 'y' or 'n'",
+        fixed = TRUE
+      )
+    }
+  )
+})
