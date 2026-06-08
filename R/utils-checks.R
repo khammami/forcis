@@ -93,7 +93,7 @@ check_if_character <- function(str) {
 check_required_columns <- function(data) {
   check_if_df(data)
 
-  if (any(!(get_required_columns() %in% colnames(data)))) {
+  if (!all((get_required_columns() %in% colnames(data)))) {
     stop("Some required columns are absent from data", call. = FALSE)
   }
 

@@ -1,3 +1,4 @@
+# jarl-ignore-start duplicated_arguments: generated file, do not edit by hand
 structure(list(method = "GET", url = "https://zenodo.org/api/records?q=conceptrecid:7390791&all_versions=true", 
     status_code = 200L, headers = structure(list(server = "nginx", 
         date = "Fri, 19 Sep 2025 11:55:13 GMT", `content-type` = "application/json", 
@@ -16,3 +17,4 @@ structure(list(method = "GET", url = "https://zenodo.org/api/records?q=conceptre
     timing = c(redirect = 0.210928, namelookup = 0.057149, connect = 0.096956, 
     pretransfer = 0.147665, starttransfer = 2.323604, total = 2.32543
     ), cache = new.env(parent = emptyenv())), class = "httr2_response")
+# jarl-ignore-end duplicated_arguments

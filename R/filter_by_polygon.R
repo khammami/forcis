@@ -15,7 +15,7 @@
 #'
 #' @examples
 #' # Import example dataset ----
-#' file_name <- system.file(file.path("extdata", "FORCIS_net_sample.csv"),
+#' file_name <- system.file("extdata", "FORCIS_net_sample.csv",
 #'                          package = "forcis")
 #'
 #' net_data <- read.csv(file_name)
@@ -24,8 +24,8 @@
 #' dim(net_data)
 #'
 #' # Import Indian Ocean spatial polygons ----
-#' file_name <- system.file(file.path("extdata",
-#'                          "IHO_Indian_ocean_polygon.gpkg"),
+#' file_name <- system.file("extdata",
+#'                          "IHO_Indian_ocean_polygon.gpkg",
 #'                          package = "forcis")
 #'
 #' indian_ocean <- sf::st_read(file_name)
@@ -48,8 +48,8 @@ filter_by_polygon <- function(data, polygon) {
   }
 
   if (
-    any(
-      !(unique(sf::st_geometry_type(polygon)) %in%
+    !all(
+      (unique(sf::st_geometry_type(polygon)) %in%
         c("POLYGON", "MULTIPOLYGON"))
     )
   ) {

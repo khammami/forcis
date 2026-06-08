@@ -45,19 +45,19 @@ test_that("Test filter_by_ocean() for error", {
 
 
 test_that("Test filter_by_ocean() for success", {
-  expect_silent(df_sub <- filter_by_ocean(df, "Indian Ocean"))
+  df_sub <- expect_silent(filter_by_ocean(df, "Indian Ocean"))
 
   expect_true(is.data.frame(df_sub))
   expect_equal(ncol(df_sub), ncol(df))
   expect_equal(nrow(df_sub), 1L)
 
-  expect_silent(df_sub <- filter_by_ocean(df, "North Atlantic Ocean"))
+  df_sub <- expect_silent(filter_by_ocean(df, "North Atlantic Ocean"))
 
   expect_true(is.data.frame(df_sub))
   expect_equal(ncol(df_sub), ncol(df))
   expect_equal(nrow(df_sub), 2L)
 
-  expect_silent(df_sub <- filter_by_ocean(df, "South Atlantic Ocean"))
+  df_sub <- expect_silent(filter_by_ocean(df, "South Atlantic Ocean"))
 
   expect_true(is.data.frame(df_sub))
   expect_equal(ncol(df_sub), ncol(df))

@@ -18,7 +18,7 @@
 #'
 #' @examples
 #' # Import example dataset ----
-#' file_name <- system.file(file.path("extdata", "FORCIS_net_sample.csv"),
+#' file_name <- system.file("extdata", "FORCIS_net_sample.csv",
 #'                          package = "forcis")
 #'
 #' net_data <- read.csv(file_name)
@@ -54,7 +54,7 @@ select_forcis_columns <- function(data, cols = NULL) {
   check_required_columns(data)
 
   if (!is.null(cols)) {
-    if (any(!(cols %in% colnames(data)))) {
+    if (!all((cols %in% colnames(data)))) {
       stop("Some columns to select are absent from data", call. = FALSE)
     }
   }

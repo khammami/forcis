@@ -1,10 +1,7 @@
 ## Data for test ----
 
 df <- read.csv(
-  system.file(
-    file.path("extdata", "FORCIS_net_sample.csv"),
-    package = "forcis"
-  )
+  system.file("extdata", "FORCIS_net_sample.csv", package = "forcis")
 )
 
 df <- add_data_type(df, "Net")

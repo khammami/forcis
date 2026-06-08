@@ -58,7 +58,9 @@ set_version <- function(version, ask = TRUE) {
         "Do you want to download it [Y/n]? "
       ))
 
-      if (answer == "") answer <- "y"
+      if (answer == "") {
+        answer <- "y"
+      }
 
       answer <- tolower(answer)
 

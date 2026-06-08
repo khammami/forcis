@@ -17,7 +17,7 @@
 #' library("ggplot2")
 #'
 #' # Import example dataset ----
-#' file_name <- system.file(file.path("extdata", "FORCIS_net_sample.csv"),
+#' file_name <- system.file("extdata", "FORCIS_net_sample.csv",
 #'                          package = "forcis")
 #'
 #' net_data <- read.csv(file_name)

@@ -15,7 +15,7 @@
 #'
 #' @examples
 #' # Import example dataset ----
-#' file_name <- system.file(file.path("extdata", "FORCIS_net_sample.csv"),
+#' file_name <- system.file("extdata", "FORCIS_net_sample.csv",
 #'                          package = "forcis")
 #'
 #' net_data <- read.csv(file_name)
@@ -43,7 +43,7 @@ filter_by_ocean <- function(data, ocean) {
     stop("Argument 'ocean' must be a character of length >= 1", call. = FALSE)
   }
 
-  if (any(!(ocean %in% get_ocean_names()))) {
+  if (!all((ocean %in% get_ocean_names()))) {
     stop(
       "Some ocean names are mispelled. Please use 'get_ocean_names()' ",
       "to find the correct spelling",

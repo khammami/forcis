@@ -44,7 +44,8 @@ The vignette will use the plankton nets data of the FORCIS database. Let's impor
 
 ```{r 'load-data', echo=FALSE}
 file_name <- system.file(
-  file.path("extdata", "FORCIS_net_sample.csv"),
+  "extdata",
+  "FORCIS_net_sample.csv",
   package = "forcis"
 )
 net_data <- read.csv(file_name)
@@ -214,8 +215,8 @@ Let's filter the plankton net data by a spatial polygon defining boundaries of t
 
 ```{r 'filter-by-polygon'}
 # Import spatial polygon ----
-file_name <- system.file(
-  file.path("extdata", "IHO_Indian_ocean_polygon.gpkg"),
+file_name <- system.file("extdata", 
+  "IHO_Indian_ocean_polygon.gpkg",
   package = "forcis"
 )
 

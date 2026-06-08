@@ -1,10 +1,7 @@
 ## Data for test ----
 
 df <- read.csv(
-  system.file(
-    file.path("extdata", "FORCIS_net_sample.csv"),
-    package = "forcis"
-  )
+  system.file("extdata", "FORCIS_net_sample.csv", package = "forcis")
 )
 
 df <- add_data_type(df, "Net")
@@ -14,10 +11,7 @@ df2 <- df
 df2 <- add_data_type(df2, "Sediment trap")
 
 df3 <- vroom::vroom(
-  system.file(
-    file.path("extdata", "FORCIS_cpr_north_sample.csv"),
-    package = "forcis"
-  ),
+  system.file("extdata", "FORCIS_cpr_north_sample.csv", package = "forcis"),
   delim = ";",
   altrep = FALSE,
   show_col_types = FALSE

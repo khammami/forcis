@@ -14,7 +14,7 @@
 #'
 #' @examples
 #' # Import example dataset ----
-#' file_name <- system.file(file.path("extdata", "FORCIS_net_sample.csv"),
+#' file_name <- system.file("extdata", "FORCIS_net_sample.csv",
 #'                          package = "forcis")
 #'
 #' net_data <- read.csv(file_name)
@@ -60,7 +60,7 @@ filter_by_year <- function(data, years) {
     start_dates <- as.Date(start_dates, format = date_format())
     start_years <- as.numeric(format(start_dates, "%Y"))
 
-    if (all(!(as.numeric(years) %in% unique(start_years)))) {
+    if (!any((as.numeric(years) %in% unique(start_years)))) {
       stop("The years provided are out of FORCIS temporal range", call. = FALSE)
     }
 
@@ -80,7 +80,7 @@ filter_by_year <- function(data, years) {
     start_dates <- as.Date(start_dates, format = date_format())
     start_years <- as.numeric(format(start_dates, "%Y"))
 
-    if (all(!(as.numeric(years) %in% unique(start_years)))) {
+    if (!any((as.numeric(years) %in% unique(start_years)))) {
       stop("The years provided are out of FORCIS temporal range", call. = FALSE)
     }
 

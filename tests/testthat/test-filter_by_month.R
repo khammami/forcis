@@ -89,49 +89,49 @@ test_that("Test filter_by_month() for error", {
 })
 
 test_that("Test filter_by_month() for success", {
-  expect_silent(df <- filter_by_month(df_net, months = 2))
+  df <- expect_silent(filter_by_month(df_net, months = 2))
 
   expect_true(is.data.frame(df))
   expect_equal(ncol(df), ncol(df_net))
   expect_equal(nrow(df), 1L)
 
-  expect_silent(df <- filter_by_month(df_net, months = 2:4))
+  df <- expect_silent(filter_by_month(df_net, months = 2:4))
 
   expect_true(is.data.frame(df))
   expect_equal(ncol(df), ncol(df_net))
   expect_equal(nrow(df), 4L)
 
-  expect_silent(df <- filter_by_month(df_net, months = c(2, 4)))
+  df <- expect_silent(filter_by_month(df_net, months = c(2, 4)))
 
   expect_true(is.data.frame(df))
   expect_equal(ncol(df), ncol(df_net))
   expect_equal(nrow(df), 2L)
 
-  expect_silent(df <- filter_by_month(df_net, months = 1:4))
+  df <- expect_silent(filter_by_month(df_net, months = 1:4))
 
   expect_true(is.data.frame(df))
   expect_equal(ncol(df), ncol(df_net))
   expect_equal(nrow(df), 4L)
 
-  expect_silent(df <- filter_by_month(df_trap, months = 2))
+  df <- expect_silent(filter_by_month(df_trap, months = 2))
 
   expect_true(is.data.frame(df))
   expect_equal(ncol(df), ncol(df_trap))
   expect_equal(nrow(df), 1L)
 
-  expect_silent(df <- filter_by_month(df_trap, months = 2:4))
+  df <- expect_silent(filter_by_month(df_trap, months = 2:4))
 
   expect_true(is.data.frame(df))
   expect_equal(ncol(df), ncol(df_trap))
   expect_equal(nrow(df), 4L)
 
-  expect_silent(df <- filter_by_month(df_trap, months = c(2, 4)))
+  df <- expect_silent(filter_by_month(df_trap, months = c(2, 4)))
 
   expect_true(is.data.frame(df))
   expect_equal(ncol(df), ncol(df_trap))
   expect_equal(nrow(df), 2L)
 
-  expect_silent(df <- filter_by_month(df_trap, months = 1:4))
+  df <- expect_silent(filter_by_month(df_trap, months = 1:4))
 
   expect_true(is.data.frame(df))
   expect_equal(ncol(df), ncol(df_trap))

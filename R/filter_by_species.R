@@ -14,7 +14,7 @@
 #'
 #' @examples
 #' # Import example dataset ----
-#' file_name <- system.file(file.path("extdata", "FORCIS_net_sample.csv"),
+#' file_name <- system.file("extdata", "FORCIS_net_sample.csv",
 #'                          package = "forcis")
 #'
 #' net_data <- read.csv(file_name)
@@ -76,7 +76,7 @@ filter_by_species <- function(data, species) {
     stop("Argument 'species' must be a character of length >= 1", call. = FALSE)
   }
 
-  if (all(!(species %in% get_species_names(data)))) {
+  if (!any((species %in% get_species_names(data)))) {
     stop("The species provided are absent from 'data'", call. = FALSE)
   }
 
