@@ -201,3 +201,18 @@ test_that("Test set_version() for success", {
     }
   )
 })
+
+test_that("Test set_version() defaults to latest when empty input", {
+  create_tempdir()
+
+  local_mocked_bindings(readline = function(prompt) "", .package = "base")
+
+  with_mocked_bindings(
+    get_metadata = get_metadata_mock,
+    {
+      y <- get_latest_version()
+      x <- set_version(version = "07", ask = TRUE)
+      expect_equal(x, y)
+    }
+  )
+})
