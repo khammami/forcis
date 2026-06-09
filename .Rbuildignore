@@ -19,3 +19,4 @@
 ^real-tests$
 ^cran-comments\.md$
 ^joss-paper$
+^jarl\.toml$
