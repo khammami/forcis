@@ -36,7 +36,9 @@ test_that("Test convert_to_long_format() for error", {
 })
 
 test_that("Test convert_to_long_format() for success", {
-  df <- expect_silent(convert_to_long_format(df_net))
+  expect_silent({
+    df <- convert_to_long_format(df_net)
+  })
 
   expect_true(is.data.frame(df))
   expect_equal(ncol(df), length(req_cols) + 2)

@@ -45,23 +45,24 @@ test_that("Test filter_by_polygon() for error", {
 })
 
 test_that("Test filter_by_polygon() for success", {
-  expect_silent(filter_by_polygon(df, iho_boundaries[2, ]))
-  df_sub <- filter_by_polygon(df, iho_boundaries[2, ])
-
+  expect_silent({
+    df_sub <- filter_by_polygon(df, iho_boundaries[2, ])
+  })
   expect_true(is.data.frame(df_sub))
   expect_equal(ncol(df_sub), ncol(df))
   expect_equal(nrow(df_sub), 1L)
 
-  expect_silent(filter_by_polygon(df, iho_boundaries[4, ]))
-  df_sub <- filter_by_polygon(df, iho_boundaries[4, ])
-
+  expect_silent({
+    df_sub <- filter_by_polygon(df, iho_boundaries[4, ])
+  })
   expect_true(is.data.frame(df_sub))
   expect_equal(ncol(df_sub), ncol(df))
   expect_equal(nrow(df_sub), 2L)
 
-  expect_silent(filter_by_polygon(df, iho_boundaries[1, ]))
+  expect_silent({
+    df_sub <- filter_by_polygon(df, iho_boundaries[1, ])
+  })
 
-  df_sub <- filter_by_polygon(df, iho_boundaries[1, ])
   expect_true(is.data.frame(df_sub))
   expect_equal(ncol(df_sub), ncol(df))
   expect_equal(nrow(df_sub), 0L)

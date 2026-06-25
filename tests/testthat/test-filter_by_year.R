@@ -89,57 +89,65 @@ test_that("Test filter_by_year() for error", {
 })
 
 test_that("Test filter_by_year() for success", {
-  df <- filter_by_year(df_net, years = 2022)
-  expect_silent(filter_by_year(df_net, years = 2022))
+  expect_silent({
+    df <- filter_by_year(df_net, years = 2022)
+  })
 
   expect_true(is.data.frame(df))
   expect_equal(ncol(df), ncol(df_net))
   expect_equal(nrow(df), 1L)
 
-  df <- filter_by_year(df_net, years = 2022:2024)
-  expect_silent(filter_by_year(df_net, years = 2022:2024))
+  expect_silent({
+    df <- filter_by_year(df_net, years = 2022:2024)
+  })
 
   expect_true(is.data.frame(df))
   expect_equal(ncol(df), ncol(df_net))
   expect_equal(nrow(df), 3L)
 
-  df <- filter_by_year(df_net, years = c(2022, 2024))
-  expect_silent(filter_by_year(df_net, years = c(2022, 2024)))
+  expect_silent({
+    df <- filter_by_year(df_net, years = c(2022, 2024))
+  })
 
   expect_true(is.data.frame(df))
   expect_equal(ncol(df), ncol(df_net))
   expect_equal(nrow(df), 2L)
 
-  df <- filter_by_year(df_net, years = 2000:2022)
-  expect_silent(filter_by_year(df_net, years = 2000:2022))
+  expect_silent({
+    df <- filter_by_year(df_net, years = 2000:2022)
+  })
 
   expect_true(is.data.frame(df))
   expect_equal(ncol(df), ncol(df_net))
   expect_equal(nrow(df), 2L)
 
-  df <- filter_by_year(df_trap, years = 2022)
-  expect_silent(filter_by_year(df_trap, years = 2022))
+  expect_silent({
+    df <- filter_by_year(df_trap, years = 2022)
+  })
 
   expect_true(is.data.frame(df))
   expect_equal(ncol(df), ncol(df_trap))
   expect_equal(nrow(df), 1L)
 
-  df <- filter_by_year(df_trap, years = 2022:2024)
-  expect_silent(filter_by_year(df_trap, years = 2022:2024))
+  expect_silent({
+    df <- filter_by_year(df_trap, years = 2022:2024)
+  })
 
   expect_true(is.data.frame(df))
   expect_equal(ncol(df), ncol(df_trap))
   expect_equal(nrow(df), 3L)
 
-  df <- filter_by_year(df_trap, years = c(2022, 2024))
-  expect_silent(filter_by_year(df_trap, years = c(2022, 2024)))
+  expect_silent({
+    df <- filter_by_year(df_trap, years = c(2022, 2024))
+  })
 
   expect_true(is.data.frame(df))
   expect_equal(ncol(df), ncol(df_trap))
   expect_equal(nrow(df), 2L)
 
-  df <- filter_by_year(df_trap, years = 2000:2022)
-  expect_silent(filter_by_year(df_trap, years = 2000:2022))
+  expect_silent({
+    df <- filter_by_year(df_trap, years = 2000:2022)
+  })
 
   expect_true(is.data.frame(df))
   expect_equal(ncol(df), ncol(df_trap))

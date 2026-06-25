@@ -81,17 +81,17 @@ test_that("Test filter_by_species() for error", {
 })
 
 test_that("Test filter_by_species() for success", {
-  res <- filter_by_species(df_net, species = c("conglobatus"))
-  expect_silent(filter_by_species(df_net, species = c("conglobatus")))
+  expect_silent({
+    res <- filter_by_species(df_net, species = c("conglobatus"))
+  })
 
   expect_true(is.data.frame(res))
   expect_equal(ncol(res), 2L)
   expect_equal(nrow(res), 5L)
 
-  res <- filter_by_species(df_net, species = c("conglobatus", "g_rubescens"))
-  expect_silent(
-    filter_by_species(df_net, species = c("conglobatus", "g_rubescens"))
-  )
+  expect_silent({
+    res <- filter_by_species(df_net, species = c("conglobatus", "g_rubescens"))
+  })
 
   expect_true(is.data.frame(res))
   expect_equal(ncol(res), 3L)

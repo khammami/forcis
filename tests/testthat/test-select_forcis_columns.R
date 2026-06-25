@@ -42,30 +42,34 @@ test_that("Test select_forcis_columns() for error", {
 })
 
 test_that("Test select_forcis_columns() for success", {
-  df <- select_forcis_columns(df_net)
-  expect_silent(select_forcis_columns(df_net))
+  expect_silent({
+    df <- select_forcis_columns(df_net)
+  })
 
   expect_true(is.data.frame(df))
   expect_equal(ncol(df), ncol(df_net) - 1)
   expect_equal(nrow(df), 1L)
 
-  df <- select_forcis_columns(df_net, cols = "toto")
-  expect_silent(select_forcis_columns(df_net, cols = "toto"))
+  expect_silent({
+    df <- select_forcis_columns(df_net, cols = "toto")
+  })
 
   expect_true(is.data.frame(df))
   expect_equal(ncol(df), ncol(df_net))
   expect_equal(nrow(df), 1L)
   expect_equal(colnames(df)[length(req_cols) + 1], "toto")
 
-  df <- select_forcis_columns(df_cpr)
-  expect_silent(select_forcis_columns(df_cpr))
+  expect_silent({
+    df <- select_forcis_columns(df_cpr)
+  })
 
   expect_true(is.data.frame(df))
   expect_equal(ncol(df), ncol(df_cpr) - 1)
   expect_equal(nrow(df), 1L)
 
-  df <- select_forcis_columns(df_cpr, cols = "toto")
-  expect_silent(select_forcis_columns(df_cpr, cols = "toto"))
+  expect_silent({
+    df <- select_forcis_columns(df_cpr, cols = "toto")
+  })
 
   expect_true(is.data.frame(df))
   expect_equal(ncol(df), ncol(df_cpr))

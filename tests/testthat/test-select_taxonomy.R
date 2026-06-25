@@ -39,15 +39,17 @@ test_that("Test get_species_names() for error", {
 })
 
 test_that("Test get_species_names() for success", {
-  df <- select_taxonomy(df_net, "OT")
-  expect_silent(select_taxonomy(df_net, "OT"))
+  expect_silent({
+    df <- select_taxonomy(df_net, "OT")
+  })
 
   expect_true(is.data.frame(df))
   expect_equal(ncol(df), 3L)
   expect_equal(nrow(df), 5L)
 
-  df <- select_taxonomy(df_net, "VT")
-  expect_silent(select_taxonomy(df_net, "VT"))
+  expect_silent({
+    df <- select_taxonomy(df_net, "VT")
+  })
 
   expect_true(is.data.frame(df))
   expect_equal(ncol(df), 2L)

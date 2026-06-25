@@ -59,19 +59,25 @@ test_that("Test filter_by_bbox() for error", {
 
 
 test_that("Test filter_by_bbox() for success", {
-  df_sub <- expect_silent(filter_by_bbox(df, bbox_num))
+  expect_silent({
+    df_sub <- filter_by_bbox(df, bbox_num)
+  })
 
   expect_true(is.data.frame(df_sub))
   expect_equal(ncol(df_sub), ncol(df))
   expect_equal(nrow(df_sub), 2L)
 
-  df_sub <- expect_silent(filter_by_bbox(df, bbox))
+  expect_silent({
+    df_sub <- filter_by_bbox(df, bbox)
+  })
 
   expect_true(is.data.frame(df_sub))
   expect_equal(ncol(df_sub), ncol(df))
   expect_equal(nrow(df_sub), 2L)
 
-  df_sub <- expect_silent(filter_by_bbox(df, bbox_num_2))
+  expect_silent({
+    df_sub <- filter_by_bbox(df, bbox_num_2)
+  })
 
   expect_true(is.data.frame(df_sub))
   expect_equal(ncol(df_sub), ncol(df))
